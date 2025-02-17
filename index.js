@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+
 
 require('dotenv').config(); // spiega: carico le variabili d'ambiente dal file .env
 const IMGFLIP_USR = process.env.IMGFLIP_USR; 
 const IMGFLIP_PWD = process.env.IMGFLIP_PWD;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
