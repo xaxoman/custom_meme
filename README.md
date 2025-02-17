@@ -1,38 +1,33 @@
-# Custom Meme Generator
+# Generatore di Meme Personalizzato
 
 Generatore di meme con immagine casuale in cui l'utente può scegliere il testo da immettere nell'immagine che verrà poi posizionato in automatico.
 
-## Table of Contents
+## Indice
+- Introduzione
+- Funzionalità
+- Installazione
+- Utilizzo
+- Licenza
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+## Introduzione
+Custom Meme Generator è un'applicazione web che permette agli utenti di generare meme con immagini casuali. Gli utenti possono inserire il proprio testo, che verrà posizionato automaticamente sull'immagine.
 
-## Introduction
+## Funzionalità
+- Generazione di meme con immagini casuali  
+- Inserimento di testo personalizzato nei meme  
+- Posizionamento automatico del testo sulle immagini  
 
-Custom Meme Generator is a web application that allows users to generate memes with random images. Users can input their own text which will be automatically positioned on the image.
+## Installazione
+Per installare ed eseguire questo progetto in locale, segui questi passaggi:
 
-## Features
+```sh
+git clone https://github.com/xaxoman/custom_meme.git
+cd custom_meme
+npm install
+npm start
+```
 
-- Generate memes with random images
-- Input custom text for memes
-- Automatic text positioning on images
+Ora il server dovrebbe essere disponibile su `localhost:3000`
 
-## Installation
-
-To install and run this project locally, follow these steps:
-
-   ```bash
-   git clone https://github.com/xaxoman/custom_meme.git
-   cd custom_meme
-   npm install
-   npm start
-   ```
-- Now the server should be available at `localhost:3000`
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-
+# Licenza
+Questo progetto è distribuito sotto licenza Apache 2.0  Consulta il file LICENSE per maggiori dettagli.
