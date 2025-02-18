@@ -25,10 +25,10 @@
         <div class="container">
             <img class="meme_gif" src="https://media.tenor.com/_1hMqyFC4LEAAAAM/pop-cat.gif" alt="pop cat meme">
             <h1>Generatore di meme random</h1>
-            <form>
+            <form onsubmit="generaMeme(event)">
                 <input id="meme_text_top" placeholder="Inserisci il testo soprastante del meme" type="text" required>
                 <input id="meme_text_bottom" placeholder="Inserisci il testo sottostante del meme" type="text" required>
-                <button onclick="generaMeme()">Genera il meme</button>
+                <button type="submit">Genera il meme</button>
             </form>
             <img src="#" id="meme" alt="meme_placeholder">
         </div>
@@ -38,7 +38,8 @@
             prevent mime type error, we should use text/javascript which is standard
         -->
             <script>
-                async function generaMeme() {
+                async function generaMeme(event) {
+                    event.preventDefault();  // spiega: previene il comportamento predefinito del form che è di fare il submit
                     const text_top = document.getElementById("meme_text_top").value;
                     const text_bottom = document.getElementById("meme_text_bottom").value;
 
