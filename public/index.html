@@ -25,9 +25,11 @@
         <div class="container">
             <img class="meme_gif" src="https://media.tenor.com/_1hMqyFC4LEAAAAM/pop-cat.gif" alt="pop cat meme">
             <h1>Generatore di meme random</h1>
-            <input id="meme_text_top" placeholder="Inserisci il testo soprastante del meme" type="text" required>
-            <input id="meme_text_bottom" placeholder="Inserisci il testo sottostante del meme" type="text" required>
-            <button onclick="generaMeme()">Genera il meme</button>
+            <form>
+                <input id="meme_text_top" placeholder="Inserisci il testo soprastante del meme" type="text" required>
+                <input id="meme_text_bottom" placeholder="Inserisci il testo sottostante del meme" type="text" required>
+                <button onclick="generaMeme()">Genera il meme</button>
+            </form>
             <img src="#" id="meme" alt="meme_placeholder">
         </div>
 
