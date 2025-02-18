@@ -43,13 +43,21 @@
                     const text_bottom = document.getElementById("meme_text_bottom").value;
 
                     try {
-                        const response = await fetch(`/api/meme?top=${text_top}&bottom=${text_bottom}`);
-                        const data = await response.json();
-                        const meme_placeholder = document.getElementById('meme'); 
+                       if (text_top && text_bottom) {
 
-                        meme_placeholder.style.display = 'block';
-                        meme_placeholder.src = data.meme;
-                    
+                            const response = await fetch(`/api/meme?top=${text_top}&bottom=${text_bottom}`);
+                            const data = await response.json();
+                            const meme_placeholder = document.getElementById('meme'); 
+
+                            meme_placeholder.style.display = 'block';
+                            meme_placeholder.src = data.meme;
+                       }
+                       
+                       else {
+
+                            document.getElementById('meme').innerText = 'Inserisci il testo sopra e sotto il meme.';
+                       }
+
                     } catch (error) {
                         document.getElementById('meme').innerText = 'Oops! fetch del meme non riuscito.';
                         console.error(error);
