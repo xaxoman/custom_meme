@@ -39,15 +39,15 @@
         -->
             <script>
                 async function generaMeme(event) {
-                    event.preventDefault();  // spiega: previene il comportamento predefinito del form che è di fare il submit
+                    event.preventDefault();
                     const text_top = document.getElementById("meme_text_top").value;
                     const text_bottom = document.getElementById("meme_text_bottom").value;
+                    const meme_placeholder = document.getElementById('meme');
 
                     try {
                        if ((text_top && text_bottom) !== '') {
-
-                            const response = await fetch(`/api/meme?top=${text_top}&bottom=${text_bottom}`);
-                            const data = await response.json();
+                            const response = await fetch(`/api/meme?top=${encodeURIComponent(text_top)}&bottom=${encodeURIComponent(text_bottom)}`);
+                            
                             const meme_placeholder = document.getElementById('meme'); 
 
                             meme_placeholder.style.display = 'block';
@@ -56,7 +56,7 @@
                        
                        else {
 
-                            document.getElementById('meme').innerText = 'Inserisci il testo sopra e sotto il meme.';
+                            meme_placeholder.innerText = 'Inserisci il testo sopra e sotto il meme.';
                        }
 
                     } catch (error) {
