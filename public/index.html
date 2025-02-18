@@ -47,21 +47,16 @@
                     try {
                        if ((text_top && text_bottom) !== '') {
                             const response = await fetch(`/api/meme?top=${encodeURIComponent(text_top)}&bottom=${encodeURIComponent(text_bottom)}`);
-                            
-                            const meme_placeholder = document.getElementById('meme'); 
+                            const data = await response.json(); // spiega: il server risponde con un json e lo parsiamo
 
                             meme_placeholder.style.display = 'block';
                             meme_placeholder.src = data.meme;
+                       } else {
+                            alert('Inserisci il testo sopra e sotto il meme');
                        }
-                       
-                       else {
-
-                            meme_placeholder.innerText = 'Inserisci il testo sopra e sotto il meme.';
-                       }
-
                     } catch (error) {
-                        document.getElementById('meme').innerText = 'Oops! fetch del meme non riuscito.';
-                        console.error(error);
+                        console.error('Error:', error);
+                        meme_placeholder.innerText = 'Oops! fetch del meme non riuscito.';
                     }
                 }
             </script>
