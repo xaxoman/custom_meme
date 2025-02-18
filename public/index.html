@@ -47,7 +47,7 @@
                     try {
                        if ((text_top && text_bottom) !== '') {
                             const response = await fetch(`/api/meme?top=${encodeURIComponent(text_top)}&bottom=${encodeURIComponent(text_bottom)}`);
-                            const data = await response.json(); // spiega: il server risponde con un json e lo parsiamo
+                            const data = await response.json(); // spiega: il server risponde con un json 
 
                             meme_placeholder.style.display = 'block';
                             meme_placeholder.src = data.meme;
